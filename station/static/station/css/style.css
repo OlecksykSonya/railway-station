@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f5f9;
+    color: #263449;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #17283f;
+    color: white;
+    padding: 22px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.2s;
+}
+
+.nav-list a:hover {
+    color: #e7ad54;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 175px;
+    padding-top: 12px;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    display: block;
+    background-color: #243b59;
+    padding: 11px 15px;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+    display: block;
+}
+
+.content {
+    flex: 1;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #17283f;
+    border-left: 5px solid #d69a40;
+    padding-left: 15px;
+}
+
+h2 {
+    color: #17283f;
+    margin: 25px 0 15px;
+}
+
+h3 {
+    color: #263c59;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 17px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+.welcome,
+.info-card,
+.contact-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.welcome {
+    border-top: 4px solid #d69a40;
+}
+
+.info-section {
+    margin-top: 30px;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    border-bottom: 3px solid #d69a40;
+}
+
+.info-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #b27621;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-card {
+    margin: 25px 0;
+}
+
+.note {
+    color: #777;
+    font-size: 14px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 15px;
+    border: 1px solid #e0e5eb;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: #17283f;
+    color: white;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #f4f6f9;
+}
+
+footer {
+    background-color: #17283f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .header-content {
+        flex-direction: column;
+    }
+
+    .nav-list {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .schedule-table {
+        font-size: 12px;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 8px;
+    }
+}
