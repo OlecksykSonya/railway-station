@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список рейсов</h1>
+
+<a href="{% url 'trip_create' %}">Добавить рейс</a>
+
+<ul>
+    {% for trip in trips %}
+        <li>
+            <a href="{% url 'trip_detail' trip.pk %}">
+                {{ trip.train }} — {{ trip.route }}
+            </a>
+
+            <a href="{% url 'trip_update' trip.pk %}">Редактировать</a>
+
+            <a href="{% url 'trip_delete' trip.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Список рейсов пока пуст.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

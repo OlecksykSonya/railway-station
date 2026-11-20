@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Информация о маршруте</h1>
+
+<p>Название маршрута: {{ route.name }}</p>
+<p>Станция отправления: {{ route.departure_station }}</p>
+<p>Станция прибытия: {{ route.arrival_station }}</p>
+<p>Расстояние: {{ route.distance }} км</p>
+
+<a href="{% url 'route_update' route.pk %}">Редактировать</a>
+<a href="{% url 'route_delete' route.pk %}">Удалить</a>
+<a href="{% url 'route_list' %}">Вернуться к списку маршрутов</a>
+{% endblock %}

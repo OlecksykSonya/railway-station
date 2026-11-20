@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список поездов</h1>
+
+<a href="{% url 'train_create' %}">Добавить поезд</a>
+
+<ul>
+    {% for train in trains %}
+        <li>
+            <a href="{% url 'train_detail' train.pk %}">
+                Поезд №{{ train.number }}
+            </a>
+
+            <a href="{% url 'train_update' train.pk %}">Редактировать</a>
+
+            <a href="{% url 'train_delete' train.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Список поездов пока пуст.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

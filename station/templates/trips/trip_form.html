@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+{% if object %}
+    <h1>Редактирование рейса</h1>
+{% else %}
+    <h1>Добавление нового рейса</h1>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Сохранить</button>
+</form>
+
+<a href="{% url 'trip_list' %}">Вернуться к списку рейсов</a>
+{% endblock %}

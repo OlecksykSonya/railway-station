@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Информация о пассажире</h1>
+
+<p>ФИО: {{ passenger.full_name }}</p>
+<p>Номер паспорта: {{ passenger.passport_number }}</p>
+<p>Телефон: {{ passenger.phone }}</p>
+<p>Электронная почта: {{ passenger.email }}</p>
+
+<a href="{% url 'passenger_update' passenger.pk %}">Редактировать</a>
+<a href="{% url 'passenger_delete' passenger.pk %}">Удалить</a>
+<a href="{% url 'passenger_list' %}">Вернуться к списку пассажиров</a>
+{% endblock %}

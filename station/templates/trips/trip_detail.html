@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Информация о рейсе</h1>
+
+<p>Поезд: {{ trip.train }}</p>
+<p>Маршрут: {{ trip.route }}</p>
+<p>Дата и время отправления: {{ trip.departure_datetime }}</p>
+<p>Дата и время прибытия: {{ trip.arrival_datetime }}</p>
+
+{% if trip.is_delayed %}
+    <p>Статус: Рейс задержан</p>
+{% else %}
+    <p>Статус: Без задержек</p>
+{% endif %}
+
+<a href="{% url 'trip_update' trip.pk %}">Редактировать</a>
+<a href="{% url 'trip_delete' trip.pk %}">Удалить</a>
+<a href="{% url 'trip_list' %}">Вернуться к списку рейсов</a>
+{% endblock %}

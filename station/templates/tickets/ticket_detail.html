@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Информация о билете №{{ ticket.pk }}</h1>
+
+<p>Пассажир: {{ ticket.passenger }}</p>
+<p>Рейс: {{ ticket.trip }}</p>
+<p>Номер места: {{ ticket.seat_number }}</p>
+<p>Стоимость: {{ ticket.price }} руб.</p>
+<p>Дата покупки: {{ ticket.purchase_date }}</p>
+
+<a href="{% url 'ticket_update' ticket.pk %}">Редактировать</a>
+<a href="{% url 'ticket_delete' ticket.pk %}">Удалить</a>
+<a href="{% url 'ticket_list' %}">Вернуться к списку билетов</a>
+{% endblock %}

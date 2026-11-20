@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список маршрутов</h1>
+
+<a href="{% url 'route_create' %}">Добавить маршрут</a>
+
+<ul>
+    {% for route in routes %}
+        <li>
+            <a href="{% url 'route_detail' route.pk %}">
+                {{ route.name }}
+            </a>
+
+            <a href="{% url 'route_update' route.pk %}">Редактировать</a>
+
+            <a href="{% url 'route_delete' route.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Список маршрутов пока пуст.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

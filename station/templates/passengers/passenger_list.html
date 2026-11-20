@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Список пассажиров</h1>
+
+<a href="{% url 'passenger_create' %}">Добавить пассажира</a>
+
+<ul>
+    {% for passenger in passengers %}
+        <li>
+            <a href="{% url 'passenger_detail' passenger.pk %}">
+                {{ passenger.full_name }}
+            </a>
+
+            <a href="{% url 'passenger_update' passenger.pk %}">Редактировать</a>
+
+            <a href="{% url 'passenger_delete' passenger.pk %}">Удалить</a>
+        </li>
+    {% empty %}
+        <li>Список пассажиров пока пуст.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Информация о поезде №{{ train.number }}</h1>
+
+<p>Тип поезда: {{ train.train_type }}</p>
+<p>Количество вагонов: {{ train.carriages_count }}</p>
+
+{% if train.photo %}
+    <img src="{{ train.photo.url }}" alt="Фотография поезда" width="300">
+{% endif %}
+
+<a href="{% url 'train_update' train.pk %}">Редактировать</a>
+<a href="{% url 'train_delete' train.pk %}">Удалить</a>
+<a href="{% url 'train_list' %}">Вернуться к списку поездов</a>
+{% endblock %}

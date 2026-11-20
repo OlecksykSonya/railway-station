@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Удаление пассажира</h1>
+
+<p>Вы действительно хотите удалить пассажира {{ object.full_name }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+</form>
+
+<a href="{% url 'passenger_list' %}">Отмена</a>
+{% endblock %}
